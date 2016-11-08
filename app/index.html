@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row row-content" ng-controller="UploadController">
             <div class="col-xs-12">
-				<form action="/rest/uploadFile">
+				<form action="/rest/uploadFile" enctype="multipart/form-data">
 					Upload File: <input type="file" fileread="uploadFile">				
 					<input type="submit">
 				</form>
