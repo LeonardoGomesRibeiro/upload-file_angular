@@ -1,0 +1,27 @@
+{
+  "name": "uploadFileAngular",
+  "version": "1.0.0",
+  "description": "DotSub Code Test",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "uploadFileAngular"
+  ],
+  "authors": [
+    "Leonardo Ribeiro"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "angular": "~1.4.7"
+  }
+}
