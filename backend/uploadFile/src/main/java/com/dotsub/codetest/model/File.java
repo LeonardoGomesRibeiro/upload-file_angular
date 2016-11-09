@@ -27,7 +27,7 @@ public class File {
 	    private String description;
 	 	
 	 	@Column()
-	 	@DateTimeFormat(pattern="MM-dd-yyyy hh:ss:mm")
+	 	@DateTimeFormat(pattern="MM-dd-yyyy hh:mm:ss")
 	 	private Date createdDate;
 	 	
 	 	@Column()

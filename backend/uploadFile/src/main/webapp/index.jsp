@@ -41,7 +41,7 @@
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="description">Upload File:</label>
 						<div class="col-sm-10">
-							<input type="file" file-model="myFile">
+							<input type="file" file-upload file="file">
 							<button ng-click="uploadFile()">upload file</button>
 						</div>
 					</div>
