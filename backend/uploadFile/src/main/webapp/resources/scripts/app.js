@@ -27,4 +27,14 @@ angular.module('dotSubApp', ['ngRoute'])
         var uploadUrl = "/uploadFile/rest/uploadFile";
         fileUpload.uploadFileToUrl(file, uploadUrl, clearFields);
     };
-}]);
+}])
+.controller('ListFilesController', ['$scope', function($scope, fileUpload) {
+	$scope.listFiles = function(){
+        $scope.files = [{
+        			createdDate: new Date(),
+        			title: 'test',
+        			description: 'description'
+        		}];
+    };
+}])
+;

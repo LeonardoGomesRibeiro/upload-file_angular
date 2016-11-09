@@ -22,8 +22,10 @@ public class UploadFileController {
 	@RequestMapping("/list")
 	public ModelAndView listAll() {
 		ModelAndView mav = new ModelAndView("templates/listAll");
+		
 		return mav;
 	}
+	
 /*	@Autowired
 	SessionFactory sessionFactory;
 	
@@ -39,17 +41,7 @@ public class UploadFileController {
 	        List<FileItem> multipart = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
 	        String folder = "path";
 	        String filename = "";
-	        Enumeration aNames = request.getAttributeNames();
-	        while (aNames.hasMoreElements()) {
-				Object object = (Object) aNames.nextElement();
-				System.out.println("=== "+object);
-			}
 	        
-	        Enumeration pNames = request.getParameterNames();
-	        while (pNames.hasMoreElements()) {
-				Object object = (Object) pNames.nextElement();
-				System.out.println("000000 "+ object);
-			}
 	        for (FileItem item : multipart) {
 	        	com.dotsub.codetest.model.File file = new com.dotsub.codetest.model.File();					        	
 				
