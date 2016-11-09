@@ -1,15 +1,16 @@
 'use strict';
-angular.module('dotSubApp').directive('fileModel', ['$parse', function ($parse) {
+angular.module('dotSubApp').directive('fileUpload', ['$parse', function ($parse) {
     return {
         restrict: 'A',
+        scope: {
+        	file: '='
+        },
         link: function(scope, element, attrs) {
-            var model = $parse(attrs.fileModel);
-            var modelSetter = model.assign;
-            
             element.bind('change', function(){
-                scope.$apply(function(){
-                    modelSetter(scope, element[0].files[0]);
-                });
+            	var files = event.target.files;
+                var file = files[0];
+                scope.file = file ? file : undefined;
+                scope.$apply();
             });
         }
     };
