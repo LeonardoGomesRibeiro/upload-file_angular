@@ -19,13 +19,20 @@ import org.springframework.web.servlet.ModelAndView;
 public class UploadFileController {
 	
 	List<com.dotsub.codetest.model.File> uploadedFiles = new LinkedList<com.dotsub.codetest.model.File>();
+	
 	@RequestMapping("/list")
 	public ModelAndView listAll() {
-		ModelAndView mav = new ModelAndView("templates/listAll");
+		ModelAndView mav = new ModelAndView("index");
 		
 		return mav;
 	}
 	
+	@RequestMapping("/upload")
+	public ModelAndView upload() {
+		ModelAndView mav = new ModelAndView("index");
+		
+		return mav;
+	}
 /*	@Autowired
 	SessionFactory sessionFactory;
 	

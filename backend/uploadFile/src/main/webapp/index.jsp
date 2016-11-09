@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en" ng-app="dotSubApp">
+<html lang="en" >
 
 <head>
 <meta charset="utf-8">
@@ -47,48 +47,15 @@
   </style>
 </head>
 
-<body>
+<body ng-app="dotSubApp">
 
-	<div class="container">
-		<span id="infoInputFile">*Please, select a file and click next to upload.</span>
-		<div class="row row-content" ng-controller="UploadController">
-			<div class="col-xs-12">
-				<form enctype="multipart/form-data">
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="title">Title:</label>
-						<div class="col-sm-10">
-							<input ng-model="title" type="text" class="form-control" id="title"
-								placeholder="Change the file name if you want">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="description">Description:</label>
-						<div class="col-sm-10">
-							<input ng-model="description" type="text" class="form-control" id="description"
-								placeholder="Type a brief description of this file">
-						</div>
-					</div>
-							
-					<div class="form-group">
-						<label class="control-label col-sm-2" for="description">Upload File:</label>
-						<div class="col-sm-10">
-							<input type="file" file-upload file="file">
-							<button ng-click="uploadFile()">upload file</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-		<div class="btn-footer">
-			<button type="button" id="" class="btn-next" style="">VIEW ALL</button>
-			<a href="list">TEST3</a>
-		</div>
-		
+	<div class="container">		
+		<ng-view></ng-view>		
 	</div>
-
 	<script src="resources/bower_components/angular/angular.min.js"></script>
 	<script src="resources/bower_components/angular-route/angular-route.min.js"></script>
 	<script src="resources/scripts/app.js"></script>
+	<script src="resources/scripts/controllers/uploadFileController.js"></script>
 	<script src="resources/scripts/directives/fileUpload.js"></script>
 	<script src="resources/scripts/services/fileUploadService.js"></script>
 
