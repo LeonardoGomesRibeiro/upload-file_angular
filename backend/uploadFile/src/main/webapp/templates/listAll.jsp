@@ -6,9 +6,8 @@
 	</tr>
 
 	<tr ng-repeat="file in files">
-		<td>{{ file.createdDate }}</td>
+		<td ng-bind="file.createdDate | date: 'MM/dd/yyyy'" ></td>
 		<td>{{ file.title }}</td>
 		<td>{{ file.description }}</td>
-	</tr>
-	
+	</tr>	
 </table>

@@ -11,11 +11,7 @@
     http://www.springframework.org/schema/beans 
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
     http://www.springframework.org/schema/context 
-    http://www.springframework.org/schema/context/spring-context-3.0.xsd
-    http://www.springframework.org/schema/jdbc 
-    http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
-    http://www.springframework.org/schema/tx 
-    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	
 	<context:component-scan base-package="com.dotsub.codetest.controllers" />
@@ -24,27 +20,11 @@
 
 	<mvc:resources mapping="/resources/**" location="classpath:/resources" />
 
+	<import resource="db-hsqldb-config.xml"/>
+	<import resource="spring-bean-config.xml"/>
+	
 	<mvc:annotation-driven />
 
-	<!-- <jdbc:embedded-database id="dataSource" type="HSQL">
-	</jdbc:embedded-database>
-	
-	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="com.dotsub.codetest.model" />
-		<property name="hibernateProperties">
-			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
-				<prop key="hibernate.hbm2ddl.auto">create</prop>
-				<prop key="hibernate.show_sql">true</prop>
-			</props>
-		</property>
-		Another way of indicating that we want to update the schema; Spring 
-			calls this _after_ the session factory is created, while the hbm2ddl flag 
-			above is processed by Hibernate _during_ creationo f the session factory. 
-			<property name="schemaUpdate" value="true" />
-	</bean> -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />

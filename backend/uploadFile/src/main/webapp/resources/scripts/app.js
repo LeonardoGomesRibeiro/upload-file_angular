@@ -10,6 +10,6 @@ angular.module('dotSubApp', ['ngRoute'])
         templateUrl : "templates/listAll.jsp",
         controller: 'ListFilesController'
     }).otherwise({
-		redirectTo: '/'
+		redirectTo: '/upload'
     });
 });
