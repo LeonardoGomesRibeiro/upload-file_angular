@@ -56,6 +56,7 @@
 	<script src="resources/bower_components/angular-route/angular-route.min.js"></script>
 	<script src="resources/scripts/app.js"></script>
 	<script src="resources/scripts/controllers/uploadFileController.js"></script>
+	<script src="resources/scripts/controllers/listFilesController.js"></script>
 	<script src="resources/scripts/directives/fileUpload.js"></script>
 	<script src="resources/scripts/services/fileUploadService.js"></script>
 

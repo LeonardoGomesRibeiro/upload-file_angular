@@ -12,14 +12,4 @@ angular.module('dotSubApp', ['ngRoute'])
     }).otherwise({
 		redirectTo: '/'
     });
-})
-.controller('ListFilesController', ['$scope', function($scope, fileUpload) {
-	$scope.listFiles = function(){
-        $scope.files = [{
-        			createdDate: new Date(),
-        			title: 'test',
-        			description: 'description'
-        		}];
-    };
-}])
-;
+});
