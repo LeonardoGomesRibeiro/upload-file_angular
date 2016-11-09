@@ -1,27 +1,29 @@
 package com.dotsub.codetest.controllers;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Enumeration;
+import java.util.LinkedList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UploadFileController {
 	
+	List<com.dotsub.codetest.model.File> uploadedFiles = new LinkedList<com.dotsub.codetest.model.File>();
+	@RequestMapping("/list")
+	public ModelAndView listAll() {
+		ModelAndView mav = new ModelAndView("templates/listAll");
+		return mav;
+	}
 /*	@Autowired
 	SessionFactory sessionFactory;
 	
@@ -64,14 +66,14 @@ public class UploadFileController {
 	            	if (item.getFieldName().equals("description")){
 		        		file.setDescription(item.getString());	        		
 		        	} else if (item.getFieldName().equals("createdDate")) {
-		        		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss");	        	
-			        	Date d = sdf.parse(item.getString());
-			        	file.setCreatedDate(d);
+		        		//SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy", Locale.US);	        	
+			        	//Date d = sdf.parse(item.getString());
+			        	//file.setCreatedDate(d);
 		        	}
 	            }
+	        	uploadedFiles.add(file);
 				//item.write(new File(folder + "/" + filename));
-				
-				
+	        	
 				/*currentSession.persist(file);
 		        currentSession.flush();*/
 	        }

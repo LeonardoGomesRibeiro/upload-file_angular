@@ -14,12 +14,43 @@
   <link rel="stylesheet" href="resources/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <script src="resources/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  
+  <style type="text/css">
+	  #infoInputFile {
+	    color: #999;
+	    padding: 18px 14px 15px 0px;
+	    display: inline-block;
+	  }
+	  .btn-footer button {
+		float: right;
+	  }
+	  .btn-next {
+	    display: inline-block;
+	    padding: 6px 12px;
+	    margin-bottom: 0;
+	    font-size: 14px;
+	    font-weight: 400;
+	    line-height: 1.42857143;
+	    text-align: center;
+	    white-space: nowrap;
+	    vertical-align: middle;
+	    -ms-touch-action: manipulation;
+	    touch-action: manipulation;
+	    cursor: pointer;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    background-image: none;
+	    border: 1px solid transparent;
+	    border-radius: 4px;
+	  }
+  </style>
 </head>
 
 <body>
 
 	<div class="container">
+		<span id="infoInputFile">*Please, select a file and click next to upload.</span>
 		<div class="row row-content" ng-controller="UploadController">
 			<div class="col-xs-12">
 				<form enctype="multipart/form-data">
@@ -48,9 +79,15 @@
 				</form>
 			</div>
 		</div>
+		<div class="btn-footer">
+			<button type="button" id="" class="btn-next" style="">VIEW ALL</button>
+			<a href="list">TEST3</a>
+		</div>
+		
 	</div>
 
 	<script src="resources/bower_components/angular/angular.min.js"></script>
+	<script src="resources/bower_components/angular-route/angular-route.min.js"></script>
 	<script src="resources/scripts/app.js"></script>
 	<script src="resources/scripts/directives/fileUpload.js"></script>
 	<script src="resources/scripts/services/fileUploadService.js"></script>

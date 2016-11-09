@@ -2,7 +2,7 @@
 angular.module('dotSubApp')
 .service('fileUpload', ['$http', function ($http) {
 	
-    this.uploadFileToUrl = function(file, uploadUrl){
+    this.uploadFileToUrl = function(file, uploadUrl, successCallback){
         var fd = new FormData();
         fd.append('file', file.title);
         fd.append('description', file.description);
@@ -19,7 +19,7 @@ angular.module('dotSubApp')
             transformRequest: angular.identity,
             transformResponse: angular.identity
         }).success(function(success){
-        	alert('success!')
+        	successCallback();
         });
     }
 }]);
