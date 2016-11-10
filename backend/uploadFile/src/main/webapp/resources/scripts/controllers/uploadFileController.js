@@ -1,6 +1,10 @@
 angular.module('dotSubApp')
 .controller('UploadFileController', ['$scope','fileUpload', function($scope, fileUpload) {
 	$scope.fileData = {};
+	$scope.openUploadWindow = function (){
+		angular.element('#file').click();
+	};
+	
 	$scope.uploadFile = function(){
         var file = $scope.file;
         file.title = $scope.name ? $scope.name : file.title;

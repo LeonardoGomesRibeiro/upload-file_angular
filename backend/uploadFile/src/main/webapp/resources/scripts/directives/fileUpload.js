@@ -1,5 +1,5 @@
 'use strict';
-angular.module('dotSubApp').directive('fileUpload', ['$parse', function ($parse) {
+angular.module('dotSubApp').directive('fileUpload', ['$parse','fileUpload', function ($parse, fileUpload) {
     return {
         restrict: 'A',
         scope: {
