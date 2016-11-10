@@ -17,7 +17,7 @@
 	
 	<!-- Start Hsql database manager tool -->
 	<bean depends-on="dataSource"
-		class="org.springframework.beans.factory.config.MethodInvokingBean">
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
 		<property name="targetClass" value="org.hsqldb.util.DatabaseManagerSwing" />
 		<property name="targetMethod" value="main" />
 		<property name="arguments">

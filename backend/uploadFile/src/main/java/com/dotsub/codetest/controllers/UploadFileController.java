@@ -10,15 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dotsub.codetest.dao.FileDao;
+
 @Controller
 public class UploadFileController {
 	
 	List<com.dotsub.codetest.model.File> uploadedFiles = new LinkedList<com.dotsub.codetest.model.File>();
+	
+	@Autowired
+	FileDao fileDao;
 	
 	@RequestMapping("/list")
 	public ModelAndView listAll() {
@@ -33,15 +39,12 @@ public class UploadFileController {
 		
 		return mav;
 	}
-/*	@Autowired
-	SessionFactory sessionFactory;
 	
-    private Session currentSession;*/
-    
-   /* @PostConstruct
-    public void init(){
-    	currentSession = sessionFactory.getCurrentSession();
-    }*/
+	@RequestMapping("/rest/allFiles")
+	public @ResponseBody List<com.dotsub.codetest.model.File> getAllFiles(HttpServletRequest request) {
+		return fileDao.getAll();
+	}
+	
 	@RequestMapping("/rest/uploadFile")
 	public @ResponseBody String upload(HttpServletRequest request) {
 		try {
@@ -68,7 +71,7 @@ public class UploadFileController {
 		        		//SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy", Locale.US);	        	
 			        	//Date d = sdf.parse(item.getString());
 			        	//file.setCreatedDate(d);
-		        	}
+		        	} 
 	            }
 	        	uploadedFiles.add(file);
 				//item.write(new File(folder + "/" + filename));
