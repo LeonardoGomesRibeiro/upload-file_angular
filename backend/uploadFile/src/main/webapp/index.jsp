@@ -15,36 +15,54 @@
   <script src="resources/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <style type="text/css">
-	  #infoInputFile {
-	    color: #999;
-	    padding: 18px 14px 15px 0px;
-	    display: inline-block;
-	  }
-	  .btn-footer button {
-		float: right;
-	  }
-	  .btn-next {
-	    display: inline-block;
-	    padding: 6px 12px;
-	    margin-bottom: 0;
-	    font-size: 14px;
-	    font-weight: 400;
-	    line-height: 1.42857143;
-	    text-align: center;
-	    white-space: nowrap;
-	    vertical-align: middle;
-	    -ms-touch-action: manipulation;
-	    touch-action: manipulation;
-	    cursor: pointer;
-	    -webkit-user-select: none;
-	    -moz-user-select: none;
-	    -ms-user-select: none;
-	    user-select: none;
-	    background-image: none;
-	    border: 1px solid transparent;
-	    border-radius: 4px;
-	  }
-  </style>
+#infoInputFile {
+	color: #999;
+	padding: 18px 14px 15px 0px;
+	display: inline-block;
+}
+
+.btn-footer button {
+	float: right;
+}
+
+.btn-next {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.dropzone {
+	border: 2px dashed #aaa;
+	border-radius: 5px;
+	cursor: pointer;
+	height: 200px;
+	margin-top: 30px;
+}
+
+.dropzone span {
+	color: #666;
+	display: block;
+	font-size: 20px;
+	margin-top: 80px;
+	text-align: center;
+}
+</style>
 </head>
 
 <body ng-app="dotSubApp">

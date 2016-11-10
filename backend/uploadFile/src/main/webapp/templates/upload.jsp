@@ -20,11 +20,14 @@
 			</div>
 
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="description">Upload
-					File:</label>
+				<!-- <label class="control-label col-sm-2" for="description">Upload
+					File:</label> -->
 				<div class="col-sm-10">
-					<input type="file" file-upload file="file">
-					<button ng-click="uploadFile()">upload file</button>
+					<!-- <input type="file" file-upload file="file">
+					<button ng-click="uploadFile()">upload file</button> -->
+					<div class="dropzone" droppable-item="">
+						<span>Drag files here or <u>click to browse</u> for a file</span>
+					</div>
 				</div>
 			</div>
 		</form>
@@ -33,4 +36,4 @@
 <div class="btn-footer">
 	<button type="button" id="" class="btn-next" style="">VIEW ALL</button>
 	<a href="list">TEST3</a>
-</div>
+</div> 
