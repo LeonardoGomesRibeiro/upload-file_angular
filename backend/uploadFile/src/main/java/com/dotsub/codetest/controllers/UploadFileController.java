@@ -1,9 +1,11 @@
 package com.dotsub.codetest.controllers;
 
 import java.io.File;
-import java.util.Enumeration;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -52,13 +54,12 @@ public class UploadFileController {
 	        String folder = "path";
 	        String filename = "";
 	        
+	        com.dotsub.codetest.model.File file = new com.dotsub.codetest.model.File();	        
 	        for (FileItem item : multipart) {
-	        	com.dotsub.codetest.model.File file = new com.dotsub.codetest.model.File();					        	
-				
 	        	file.setImagePath(folder + "/" + filename);
+	        	file.setTitle(item.getName());
 	        	if (!item.isFormField()) {
 	                filename = new File(item.getName()).getName();
-	                file.setTitle(filename);
 	                /*File file = new File(folder);
 	                if (!file.exists()) {
 	                    file.mkdir();
@@ -68,17 +69,17 @@ public class UploadFileController {
 	            	if (item.getFieldName().equals("description")){
 		        		file.setDescription(item.getString());	        		
 		        	} else if (item.getFieldName().equals("createdDate")) {
-		        		//SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy", Locale.US);	        	
-			        	//Date d = sdf.parse(item.getString());
-			        	//file.setCreatedDate(d);
-		        	} 
-	            }
-	        	uploadedFiles.add(file);
+		        		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");	        				        	
+			        	file.setCreatedDate(new Date());
+		        	}
+	            }	        	
+	        	//uploadedFiles.add(file);
 				//item.write(new File(folder + "/" + filename));
 	        	
 				/*currentSession.persist(file);
 		        currentSession.flush();*/
 	        }
+	        fileDao.insert(file);
 	    } catch(Exception e) {
 	    	e.printStackTrace();
 	    }
